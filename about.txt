@@ -1,0 +1,33 @@
+We Make Tourism Simple ! 
+By bringing everything you need to know about your wonderful travel experience at a glance.
+
+Who are we?
+We are a small squad of 6 members that started our journey as friends in the wonderful institution SRM in 2021.
+Just like this journey we all had a passion for making other people 's journey around the country as
+wonderful as ours !
+
+Meet the Squad 
+
+VISHAL KHUMAR PD - TEAM LEADER AND CODER
+PRANAV JAIN - CODER
+GAYATHRI - DESIGNER
+PULKIT SHRINGI - RESOURCES COLLECTOR
+BHARGAV PARMAR -INFORMATION COLLECTOR
+SRITAN KAR - CODER
+
+Our Mission
+Our aim is to make tourism just more than a tour.
+Simply to say, we want to revolutionize the tourism by bringing 
+[  Every place ]    [Every food]      [Every event]
+At one place !
+So that you have no need of asking the same old ‘“how do we spend the rest of holidays again?”
+FAQ’s
+Q1) Will there be more cities?
+YES, More are coming in your way soon.
+
+Q2) What are the details needed for accessing the project?
+An, E-Mail ID , as simple as that!
+
+Q3) How our accounts get secured?
+We have the method of OTP(one time password) .
+
