@@ -11,11 +11,17 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import random
-connection=mysql.connector.connect(host="localhost",user="root",passwd="pdvk2108")
+print("Welcome to our project")
+print()
+print(" USER INFO: You need to have SQL and PYTHON") 
+s=input("ENTER your SQL PASSWORD:")
+n=input("ENTER your SQL HOST:")
+p=input("ENTER your SQL USER:")
+connection=mysql.connector.connect(host=n,user=p,passwd=s)
 cursor=connection.cursor()
 cursor.execute("create database if not exists Hackathon_Hackers")
 cursor.execute("use Hackathon_Hackers")
-
+cursor.execute("CREATE TABLE IF NOT EXISTS Login_table1 (username varchar(30), email varchar(80), password varchar(30))")
 
 
 
@@ -57,6 +63,14 @@ def login():
       mail.sendmail(fromi,to, text)
       mail.close()
 
+      messagebox.showinfo("EMAIL VERIFICATION","OTP had been sent to your E-mail ID")
+
+      sor=messagebox.askyesno("Confirm","Redirecting you to G-MAIL")
+      if sor>0:
+        webbrowser.open("www.gmail.com")
+      else:
+        return
+    
       
       window = Tk()
       # set window title
@@ -108,7 +122,7 @@ def ab():
   k=Tk()
   with open('about.txt', 'r', encoding='utf-8') as f:
     j=f.read()
-  lbl_label=Label(k,text=j,justify=LEFT,font=['Lucida calligraphy','14'],bg='lavender')
+  lbl_label=Label(k,text=j,justify=LEFT,font=['Arial','14'],bg='#D8BFD8')
   lbl_label.place(x=10,y=20)
   def back1():
       k.destroy()
@@ -118,27 +132,28 @@ def ab():
   
   k.geometry('1500x1200+0+0')
   k.resizable(0,0)
-  k.config(bg="deeppink")
+  k.config(bg="#FFF0F5")
   k.mainloop()
 def login2():
   global login2
   login2_screen=Toplevel()
-  login2_screen.maxsize(1000,750)
+  login2_screen.maxsize(1200,750)
   login2_screen.title('JOIN COMMUNITY')
   login2_screen.config(bg="white")
-  login2_screen_img =ImageTk.PhotoImage(Image.open(r"C:\Users\VISHAL KHUMAR P.D\Downloads\Untitled22.png"))
+  login2_screen_img =ImageTk.PhotoImage(Image.open(r"C:\Users\VISHAL KHUMAR P.D\Downloads\png_20220317_102738_0000.png"))
   lb2 = Label(login2_screen,image =login2_screen_img)
   lb2.image =login2_screen_img
   lb2.pack()
   myfont=tkfont.Font(family="sans",size=15,slant="italic")
-  Label(login2_screen, text="EMAIL :",font=myfont,bd=0,bg="white").place(x=200,y=550)
+  Label(login2_screen, text="EMAIL :",font=myfont,bd=0,bg="white").place(x=200,y=400)
   ye = Entry(login2_screen, textvariable="email",bg="#F4EED3",bd=0,font=20)
   ye.configure(width=45)
-  ye.place(x=425,y=550)
-  Label(login2_screen, text="PASSWORD :",font=myfont,bd=0,bg="white").place(x=200,y=600)
+  ye.place(x=425,y=400)
+  Label(login2_screen, text="PASSWORD :",font=myfont,bd=0,bg="white").place(x=200,y=450)
   password__login_entry = Entry(login2_screen, textvariable="password", show= '*',bg="#F4EED3",bd=0,font=20)
   password__login_entry.configure(width=45)
-  password__login_entry.place(x=425,y=600)
+  password__login_entry.place(x=425,y=450)
+
   def dear():
     if password__login_entry.get()=='' or ye.get()=='':
       messagebox.showinfo("INFORMATION", "PLEASE ENTER THE REQUIRED DETAILS")
@@ -168,13 +183,13 @@ def login2():
         def chennai():
           root = Toplevel()
           #background color
-          color='#21252b'
+          color='#F9E1E0'
           root.configure(background = color)
           root.geometry('1200x1200')
 
           #Notebook color
-          sky_color = "sky blue"
-          gold_color = "gold"
+          sky_color = "#ddedea"
+          gold_color = "#fcf4dd"
           color_tab = "#ccdee0"
           #style
           style = ttk.Style()
@@ -195,7 +210,7 @@ def login2():
                                   })],
                               })]
                            )
-          style.configure('TLabel', background = color , foreground = 'white')
+          style.configure('TLabel', background = color , foreground = 'black')
           style.configure('TFrame', background = color)
           #frame
           frame_main_notebook = ttk.Frame(root, width = 200, height = 100)
@@ -208,6 +223,7 @@ def login2():
           frame_one = ttk.Frame(main_notebook, width = 200, height = 100)
           frame_one.pack(side = RIGHT)
           main_notebook.add(frame_one, text = 'PLACES TO VISIT')
+                  
           image1=ImageTk.PhotoImage(file=r"C:\Users\VISHAL KHUMAR P.D\Downloads\chennai.jpg")
           l=Label(frame_one)
           l.place(x=20,y=150)
@@ -256,14 +272,15 @@ def login2():
           
           root = Toplevel()
           #background color
-          color='#21252b'
+          color='#F9E1E0'
           root.configure(background = color)
           root.geometry('1200x1200')
 
           #Notebook color
-          sky_color = "sky blue"
-          gold_color = "gold"
+          sky_color = "#ddedea"
+          gold_color = "#fcf4dd"
           color_tab = "#ccdee0"
+          
           #style
           style = ttk.Style()
           style.theme_create( "ale_themes", parent = "alt", settings ={
@@ -283,7 +300,7 @@ def login2():
                                   })],
                               })]
                            )
-          style.configure('TLabel', background = color , foreground = 'white')
+          style.configure('TLabel', background = color , foreground = 'black')
           style.configure('TFrame', background = color)
           #frame
           frame_main_notebook = ttk.Frame(root, width = 200, height = 100)
@@ -338,18 +355,18 @@ def login2():
         Button(city_screen,image = mb_button, height=150, width=150,bd=2,compound="left",bg="white",command=mumbai).place(x=575 , y = 500)
 
         def goa():
+         
           webbrowser.open('https://docs.google.com/document/d/1F0TCBLXnkIBgdwJZ4nLQvyLsDmlp4mHIxgMaBg1gGlw/edit')
 
         goa_button=ImageTk.PhotoImage(Image.open(r"C:\Users\VISHAL KHUMAR P.D\Downloads\20220316_083332_0000.png"))
         Button(city_screen,image = goa_button, height=150, width=150,bd=2,compound="left",bg="white",command=goa).place(x=750, y = 500)
       city_screen.mainloop()
-        
 
-       
-    
-  login_btnnnn=Button(login2_screen,text = 'SIGN IN',font=['arial',10],command=dear,bd=1,bg='snow')
-  login_btnnnn.place(x=600,y=700)
-    
+                    
+  myfont=tkfont.Font(family="Segoe Script",size=15,underline=1)    
+  login_btnnnn=Button(login2_screen,text = 'SIGN IN',font=myfont, height=2,command=dear,bd=0,bg='snow',fg="#5E2C04")
+  login_btnnnn.place(x=600,y=500)
+      
 def main_screen():
  global main_screen
 
